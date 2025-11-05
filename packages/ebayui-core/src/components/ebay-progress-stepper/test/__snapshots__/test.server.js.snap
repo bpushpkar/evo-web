@@ -41,7 +41,7 @@ exports[`renders blocked progress-stepper 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
@@ -265,7 +265,7 @@ exports[`renders default state complete progress-stepper 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
@@ -459,7 +459,7 @@ exports[`renders default state progress-stepper 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
@@ -867,7 +867,7 @@ exports[`renders default without pragraph 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
@@ -1078,7 +1078,7 @@ exports[`renders in progress progress-stepper 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
@@ -1289,7 +1289,7 @@ exports[`renders vertical progress-stepper 1`] = `
               [36m>[39m
                 [36m<path[39m
                   [33md[39m=[32m"M0 12C0 5.373 5.373 0 12 0c3.183 0 6.235 1.264 8.485 3.515A11.996 11.996 0 0124 12c0 6.627-5.373 12-12 12S0 18.627 0 12zm10.71 4.71l8-8h-.01a1 1 0 00-1.41-1.41L10 14.59 6.71 11.3a1 1 0 00-1.41 1.41l4 4a1 1 0 001.41 0z"[39m
-                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-information))"[39m
+                  [33mfill[39m=[32m"var(--progress-stepper-confirmation-icon, var(--color-background-accent))"[39m
                 [36m/>[39m
               [36m</symbol>[39m
             [36m</defs>[39m
