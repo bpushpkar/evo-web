@@ -30,29 +30,28 @@ const eventList = [
 ];
 
 const defaultControlPanelElements = [
-        "play_pause",
-        "current_time",
-        "spacer",
-        "total_time",
-        "captions",
-        "mute_popover",
-        "report",
-        "fullscreen_button"
+    "play_pause",
+    "current_time",
+    "spacer",
+    "total_time",
+    "captions",
+    "mute_popover",
+    "report",
+    "fullscreen_button",
 ];
 
 const compactLayoutControlPanelElements = [
     "remaining_time",
     "mute_popover",
-    "play_pause"
+    "play_pause",
 ];
-
 
 const videoConfig = {
     doubleClickForFullscreen: true,
     singleClickForPlayAndPause: true,
     addBigPlayButton: false,
     addSeekBar: true,
-    controlPanelElements: defaultControlPanelElements
+    controlPanelElements: defaultControlPanelElements,
 };
 
 const compactConfig = {
@@ -60,14 +59,13 @@ const compactConfig = {
     singleClickForPlayAndPause: true,
     addBigPlayButton: false,
     addSeekBar: false,
-    controlPanelElements: compactLayoutControlPanelElements
+    controlPanelElements: compactLayoutControlPanelElements,
 };
 
 export interface PlayPauseEvent {
     originalEvent: Event;
     player: any;
-    isAutoPlay?: boolean;
-    isAutoPause?: boolean;
+    auto: boolean;
 }
 
 export interface VolumeEvent {
@@ -92,12 +90,12 @@ interface VideoInput extends Omit<Marko.HTML.Video, `on${string}`> {
      * The navigation link for the video
      * @example <@nav href="www.ebay.com" target="_blank"/>
      */
-    nav?: Marko.AttrTag<Marko.HTML.A>,
+    nav?: Marko.AttrTag<Marko.HTML.A>;
     /**
      * Whether to pause the video when it is less than 50% visible in the viewport
      * @default false
      */
-    offscreenPause?: boolean,
+    offscreenPause?: boolean;
     /**
      * @deprecated Use `a11y-report-text` instead
      */
@@ -142,7 +140,6 @@ class Video extends Marko.Component<Input, State> {
     private isAutoPlay: boolean = false;
     private isAutoPause: boolean = false;
     private userPaused: boolean = false;
-
 
     isPlaylist(source: Marko.HTML.Source & { src: string }) {
         const type = source.type && source.type.toLowerCase();
@@ -194,12 +191,12 @@ class Video extends Marko.Component<Input, State> {
             this.userPaused = true;
         }
 
-        this.emit("pause", { 
-            originalEvent, 
+        this.emit("pause", {
+            originalEvent,
             player: this.player,
-            isAutoPause: this.isAutoPause
+            auto: this.isAutoPause,
         });
-        
+
         // Reset isAutoPause after emitting the event
         this.isAutoPause = false;
         this.alignSeekbar();
@@ -215,12 +212,12 @@ class Video extends Marko.Component<Input, State> {
         this.state.played = true;
         this.userPaused = false;
 
-        this.emit("play", { 
-            originalEvent, 
+        this.emit("play", {
+            originalEvent,
             player: this.player,
-            isAutoPlay: this.isAutoPlay
+            auto: this.isAutoPlay,
         });
-        
+
         // Reset isAutoPlay after emitting the event
         this.isAutoPlay = false;
     }
@@ -237,19 +234,19 @@ class Video extends Marko.Component<Input, State> {
         this.state.failed = true;
         this.state.isLoaded = true;
         this.playButtonContainer.remove();
-        
+
         this.emit("load-error", err);
     }
 
     showControls() {
         let copyConfig = Object.assign({}, videoConfig);
         copyConfig.controlPanelElements = [...videoConfig.controlPanelElements];
-        
-        if(this.input.layout === "compact") {
+
+        if (this.input.layout === "compact") {
             copyConfig = Object.assign({}, compactConfig);
         }
 
-        if(this.input.nav) {
+        if (this.input.nav) {
             copyConfig.doubleClickForFullscreen = false;
             copyConfig.singleClickForPlayAndPause = false;
         }
@@ -261,7 +258,7 @@ class Video extends Marko.Component<Input, State> {
                     : copyConfig.controlPanelElements.length;
             copyConfig.controlPanelElements.splice(insertAt, 0, "volume");
         }
-        
+
         this.ui.configure(copyConfig);
         this.video.controls = false;
     }
@@ -302,13 +299,12 @@ class Video extends Marko.Component<Input, State> {
             action: "",
             isLoaded: true,
             failed: false,
-            played: false
+            played: false,
         };
 
-        
-         if(input.action === "play" || input.autoplay === true) {
+        if (input.action === "play" || input.autoplay === true) {
             this.isAutoPlay = true;
-         }
+        }
     }
 
     _addTextTracks() {
@@ -387,11 +383,10 @@ class Video extends Marko.Component<Input, State> {
             new CurrentTime.Factory(),
         );
 
-         this.shaka.ui.Controls.registerElement(
+        this.shaka.ui.Controls.registerElement(
             "remaining_time",
             new RemainingTime.Factory(),
         );
-
 
         // eslint-disable-next-line no-undef,new-cap
         this.shaka.ui.Controls.registerElement(
@@ -477,36 +472,37 @@ class Video extends Marko.Component<Input, State> {
             );
         });
 
-        if(this.input.offscreenPause) {
+        if (this.input.offscreenPause) {
             // Set up Intersection Observer to detect when video is 50% in viewport
             this.setupIntersectionObserver();
         }
-
-       
 
         this._loadVideo();
     }
 
     setupIntersectionObserver() {
         const options = {
-            root: null, 
-            rootMargin: '0px',
-            threshold: 0.5 
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.5,
         };
 
         this.observer = new IntersectionObserver((entries) => {
-             // Auto-play when 50% visible and pause when less than 50% visible
-            entries.forEach(entry => {
-                if(this.userPaused) {
+            // Auto-play when 50% visible and pause when less than 50% visible
+            entries.forEach((entry) => {
+                if (this.userPaused) {
                     // If user has manually paused, do not auto-play/pause
                     return;
                 }
-                
-               
+
                 if (entry.isIntersecting) {
-                    if (this.state.isLoaded && !this.state.failed && this.video.paused) {
+                    if (
+                        this.state.isLoaded &&
+                        !this.state.failed &&
+                        this.video.paused
+                    ) {
                         this.isAutoPlay = true;
-                        this.video.play().catch(e => {
+                        this.video.play().catch((e) => {
                             this.isAutoPlay = false;
                         });
                     }
@@ -526,7 +522,7 @@ class Video extends Marko.Component<Input, State> {
         if (this.ui) {
             this.ui.destroy();
         }
-        
+
         if (this.observer) {
             this.observer.disconnect();
         }

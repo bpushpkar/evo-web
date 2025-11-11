@@ -129,7 +129,7 @@ function getElements(self: EbayVideo) {
         }
         /**
          * Sets the text content of the time display.
-         * 
+         *
          * @param value - The time value to display
          * @private
          */
@@ -238,7 +238,7 @@ function getElements(self: EbayVideo) {
         }
         /**
          * Sets the text content of the time display.
-         * 
+         *
          * @param value - The time value to display
          * @private
          */
@@ -464,7 +464,7 @@ function getElements(self: EbayVideo) {
         }
         /**
          * Sets the text content of the remaining time display.
-         * 
+         *
          * @param value - The time value to display
          * @private
          */
@@ -485,7 +485,7 @@ function getElements(self: EbayVideo) {
             const displayTime = this.controls.getDisplayTime();
             const seekRange = this.player.seekRange();
             const seekRangeSize = seekRange.end - seekRange.start;
-            
+
             if (!isFinite(seekRangeSize)) {
                 this.setValue_("0:00");
             } else if (this.player.isLive()) {

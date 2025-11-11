@@ -10,8 +10,6 @@ import compactLayoutRaw from "./examples/compact-layout.marko?raw";
 import autoPlayComponent from "./examples/auto-play-viewport.marko";
 import autoPlayRaw from "./examples/auto-play-viewport.marko?raw";
 
-
-
 const Template: Story<Input> = (args) => ({
     input: {
         ...args,
@@ -142,11 +140,12 @@ export default {
         },
         onPlay: {
             action: "on-play",
-            description: "Triggered when play begins",
+            description:
+                "Triggered when play begins. Auto set to true if the video was automatically payed when scrolling into view",
             table: {
                 category: "Events",
                 defaultValue: {
-                    summary: "{ originalEvent, player }",
+                    summary: "{ originalEvent, player, auto }",
                 },
             },
         },
@@ -173,10 +172,12 @@ export default {
         },
         onPause: {
             action: "on-Pause",
+            description:
+                "Triggered when pause begins. Auto set to true if the video was automatically paused when scrolling out of view",
             table: {
                 category: "Events",
                 defaultValue: {
-                    summary: "{ }",
+                    summary: "{ originalEvent, player, auto }",
                 },
             },
         },
@@ -321,6 +322,13 @@ mp4.parameters = {
         },
     },
 };
-export const CompactLayout =  buildExtensionTemplate(compactLayoutComponent, compactLayoutRaw);
 
-export const AutoPlayViewport =  buildExtensionTemplate(autoPlayComponent, autoPlayRaw);
+export const CompactLayout = buildExtensionTemplate(
+    compactLayoutComponent,
+    compactLayoutRaw,
+);
+
+export const AutoPlayViewport = buildExtensionTemplate(
+    autoPlayComponent,
+    autoPlayRaw,
+);
