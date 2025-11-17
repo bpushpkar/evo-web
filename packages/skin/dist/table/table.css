@@ -140,10 +140,8 @@
     text-decoration: none;
 }
 .table--loading-state .progress-bar-expressive {
-    bottom: 50%;
-    left: 0;
+    inset: auto 0 50%;
     position: absolute;
-    right: 0;
 }
 .table--mode-selection td:first-child,
 .table--mode-selection th:first-child {

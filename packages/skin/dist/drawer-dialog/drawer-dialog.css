@@ -8,13 +8,10 @@
 .drawer-dialog[role="dialog"] {
     align-items: flex-end;
     background-color: var(--dialog-scrim-color-show);
-    bottom: 0;
-    left: 0;
+    inset: 0;
     overflow: hidden;
     -webkit-overflow-scrolling: touch;
     position: fixed;
-    right: 0;
-    top: 0;
     will-change: background-color;
     z-index: 100000;
 }

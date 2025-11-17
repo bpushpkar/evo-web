@@ -176,9 +176,8 @@ span.combobox {
     width: 38px;
 }
 .combobox__control button.icon-btn svg {
-    left: 0;
+    inset: auto 0;
     margin: 0;
-    right: 0;
 }
 .combobox--expanded .combobox__listbox {
     display: block;
