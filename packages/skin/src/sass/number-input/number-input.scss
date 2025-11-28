@@ -135,7 +135,6 @@
 .icon-btn.number-input__delete {
     display: none;
     margin-inline-end: calc(var(--spacing-100) * -1);
-    order: -1;
     padding-inline-start: var(--spacing-200);
 }
 
@@ -190,4 +189,20 @@
 .number-input__increment:disabled {
     animation: number-increment-disabled var(--motion-duration-short-2)
         var(--motion-easing-standard);
+}
+
+.number-input .textbox > label {
+    order: 0;
+}
+.number-input .textbox .number-input__decrement {
+    order: 1;
+}
+.number-input .textbox > .textbox__control {
+    order: 2;
+}
+.number-input .textbox .number-input__increment {
+    order: 3;
+}
+.number-input .textbox .number-input__delete {
+    order: 1 !important;
 }
