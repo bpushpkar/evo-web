@@ -194,15 +194,19 @@
 .number-input .textbox > label {
     order: 0;
 }
+
 .number-input .textbox .number-input__decrement {
     order: 1;
 }
+
 .number-input .textbox > .textbox__control {
     order: 2;
 }
+
 .number-input .textbox .number-input__increment {
     order: 3;
 }
+
 .number-input .textbox .number-input__delete {
     order: 1 !important;
 }
