@@ -43,6 +43,7 @@ import "@ebay/skin/listbox.css";
 | `listSelection`          | string  | No       | If `manual`, the user will need to press enter to select an item using the keyboard. Otherwise, `auto` will automatically select as the user presses up/down. |
 | `typeaheadTimeoutLength` | number  | No       | Timeout length to pass to typeahead.                                                                                                                          |
 | `maxHeight`              | string  | No       | Example: 100px, 200px, 10rem.                                                                                                                                 |
+| `a11ySelectedText`       | string  | No       | Accessible text for selected option. Default is "selected".                                                                                                   |
 
 ### EbayListboxOption
 

@@ -10,6 +10,7 @@ export type EbayListboxOptionProps = ComponentProps<"div"> & {
     value: string;
     disabled?: boolean;
     selected?: boolean;
+    a11ySelectedText?: string;
 };
 
 export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
@@ -20,6 +21,7 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
     disabled,
     tabIndex,
     selected,
+    a11ySelectedText = "selected",
     ...rest
 }) => {
     const description = filterByType(children, EbayListboxOptionDescription);
@@ -39,10 +41,14 @@ export const EbayListboxOption: FC<EbayListboxOptionProps> = ({
                     {icon}
                     {displayText ? <span>{displayText}</span> : null}
                     {description?.length ? description : null}
+                    {selected && <span className="clipped">{a11ySelectedText}</span>}
                 </span>
             ) : (
                 <>
-                    <span className="listbox__value">{displayText}</span>
+                    <span className="listbox__value">
+                        {displayText}
+                        {selected && <span className="clipped">{a11ySelectedText}</span>}
+                    </span>
                     {description?.length ? description : null}
                 </>
             )}

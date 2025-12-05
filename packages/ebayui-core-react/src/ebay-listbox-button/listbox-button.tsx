@@ -35,6 +35,7 @@ export type EbayListboxButtonProps = Omit<ComponentProps<"button">, "onChange"> 
     split?: "none" | "start" | "end";
     strategy?: "absolute" | "fixed";
     unselectedText?: string;
+    a11ySelectedText?: string;
     onChange?: EbayChangeEventHandler<HTMLButtonElement, ChangeEventProps>;
     onCollapse?: () => void;
     onExpand?: () => void;
@@ -55,6 +56,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
     strategy,
     split,
     unselectedText = "-",
+    a11ySelectedText,
     onChange = () => {},
     onCollapse = () => {},
     onExpand = () => {},
@@ -260,6 +262,7 @@ const ListboxButton: FC<EbayListboxButtonProps> = ({
                     optionsByIndexRef.current.set(index, optionNode);
                 }
             },
+            a11ySelectedText,
         }),
     );
     const wrapperClassName = classNames("listbox-button", className, { "listbox-button--fluid": fluid });

@@ -39,6 +39,15 @@ const meta: Meta<typeof EbayListbox> = {
                 },
             },
         },
+        a11ySelectedText: {
+            control: { type: "text" },
+            description: "Accessible text for selected option",
+            table: {
+                defaultValue: {
+                    summary: "selected",
+                },
+            },
+        },
         onChange: {
             action: "onChange",
             description: "Triggered on item clicked",
