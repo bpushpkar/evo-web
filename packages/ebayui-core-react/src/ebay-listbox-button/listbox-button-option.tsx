@@ -10,6 +10,7 @@ export type EbayListboxButtonOptionProps = ComponentProps<"input"> & {
     icon?: ReactNode;
     onClick?: (event: MouseEvent<HTMLDivElement>, value: ComponentProps<"input">["value"], index: number) => void;
     innerRef?: RefObject<HTMLDivElement> | RefCallback<HTMLDivElement>;
+    a11ySelectedText?: string;
 };
 
 const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
@@ -21,6 +22,7 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
     icon,
     innerRef,
     className,
+    a11ySelectedText = "selected",
     ...rest
 }) => {
     const wrapperClassName = classNames(`listbox-button__option`, className, {
@@ -40,6 +42,7 @@ const ListboxOption: FC<EbayListboxButtonOptionProps> = ({
             <span className="listbox-button__value">
                 {icon}
                 {children}
+                {selected && <span className="clipped">{a11ySelectedText}</span>}
             </span>
             <EbayIconTick16 />
         </div>

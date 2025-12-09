@@ -24,6 +24,7 @@ export type EbayListboxProps = Omit<ComponentProps<"div">, "onChange"> & {
     typeaheadTimeoutLength?: number;
     maxHeight?: string | number;
     selectClassName?: string;
+    a11ySelectedText?: string;
     onChange?: EbayChangeEventHandler<HTMLSpanElement, ChangeEventProps>;
     onEscape?: () => void;
 };
@@ -38,6 +39,7 @@ export const EbayListbox: FC<EbayListboxProps> = ({
     maxHeight,
     typeaheadTimeoutLength,
     selectClassName,
+    a11ySelectedText,
     onChange = () => {},
     onEscape = () => {},
     ...rest
@@ -199,6 +201,7 @@ export const EbayListbox: FC<EbayListboxProps> = ({
                             }
                         },
                         selected: index === selectedIndex,
+                        a11ySelectedText,
                     }),
                 )}
             </div>
