@@ -18,15 +18,12 @@ static const basePath = import.meta.env.BASE_URL;
 </html-script>
 <!doctype html>
 <html lang="en">
-  <head>
-    <base href=basePath>
-  </head>
   <body>
 
     <site-header/>
     <main class="landing-page">
       <h1>Page not found</h1>
-      <a class="fake-btn fake-btn--primary" href="./">
+      <a class="fake-btn fake-btn--primary" href=`${basePath}`>
         Go home
       </a>
     </main>

@@ -33,3 +33,15 @@ export function getDirectory(filePath: string) {
     ? directoryPath
     : directoryPath.substring(lastIndexDirectory + 1);
 }
+
+export const urls = {
+  root: basePath,
+  components: `${basePath}components`,
+  accessibility: `${basePath}accessibility`,
+  guides: `${basePath}guides`,
+  cssComponents: `${basePath}evo-css-components`,
+  markoComponents: `${basePath}evo-marko-components`,
+  reactComponents: `${basePath}evo-react-components`,
+  markoStorybook: `${basePath}ebayui-core`,
+  reactStorybook: `${basePath}ebayui-core-react/main`,
+};

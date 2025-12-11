@@ -1,4 +1,4 @@
-import { components, a11yDocs } from "../../data";
+import { components, a11yDocs, urls} from "../../data";
 
 <let/navExpanded=false>
 
@@ -86,7 +86,7 @@ import { components, a11yDocs } from "../../data";
       aria-label="Main navigation">
       <div class="nav__container">
         <div class="nav__content">
-          <a href="./">
+          <a href=urls.root>
             <div class="nav__brand">
               <div class="nav__logo">
                 <svg
@@ -111,17 +111,17 @@ import { components, a11yDocs } from "../../data";
 
           <ul class="nav__links">
             <li>
-              <a href="components/" class="nav__link">
+              <a href=urls.components class="nav__link">
                 Components
               </a>
             </li>
             <li>
-              <a href="accessibility/" class="nav__link">
+              <a href=urls.accessibility class="nav__link">
                 Accessibility
               </a>
             </li>
             <li>
-              <a href="guides/" class="nav__link">
+              <a href=urls.guides class="nav__link">
                 Guides
               </a>
             </li>
@@ -276,17 +276,17 @@ import { components, a11yDocs } from "../../data";
                       aria-label="Site navigation">
                       <ul class="app-bar__links subnav__links">
                         <li>
-                          <a href="component">
+                          <a href=urls.components>
                             Components
                           </a>
                         </li>
                         <li>
-                          <a href="accessibility">
+                          <a href=urls.accessibility>
                             Accessibility
                           </a>
                         </li>
                         <li>
-                          <a href="guides">
+                          <a href=urls.guides>
                             Guides
                           </a>
                         </li>
@@ -340,7 +340,7 @@ import { components, a11yDocs } from "../../data";
                       <ul class="subnav__links">
                         <li>
                           <h3>
-                            <a href="accessibility">
+                            <a href=urls.accessibility>
                               Accessibility Docs
                             </a>
                           </h3>
@@ -361,17 +361,17 @@ import { components, a11yDocs } from "../../data";
                     <nav class="examples-nav" aria-label="Guides">
                       <ul class="modules-expander__list subnav__links">
                         <li>
-                          <a href="guides/page-grid">
+                          <a href=`${urls.guides}/page-grid`>
                             Page Grid Use Guide
                           </a>
                         </li>
                         <li>
-                          <a href="guides/skeleton">
+                          <a href=`${urls.guides}/skeleton`>
                             Skeleton Use Guide
                           </a>
                         </li>
                         <li>
-                          <a href="guides/animation">
+                          <a href=`${urls.guides}/animation`>
                             Animation Guide
                           </a>
                         </li>

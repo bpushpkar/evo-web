@@ -140,7 +140,7 @@ function getComponentUrls(
   metadata?: ComponentMetadata,
   dsComponent?: DsComponent,
 ) {
-  const componentUrl = `components/${componentName}/`;
+  const componentUrl = `${basePath}components/${componentName}/`;
   return {
     overview: `${componentUrl}`,
     accessibility: `${componentUrl}accessibility/`,

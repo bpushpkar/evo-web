@@ -1,5 +1,5 @@
 static const pages = ["components", "accessibility", "guides"];
-import { components } from "../data";
+import { components, urls } from "../data";
 export interface Input {
     page?: string;
     content?: Marko.Body;
@@ -11,7 +11,7 @@ export interface Input {
             <div class="site-nav secondary-nav">
                 <nav id="nav" aria-labelledby="navrail-nav_title">
                     <h2 id="navrail-nav_title">
-                        <a href="components/">
+                        <a href=urls.components>
                             ${input.page?.toLocaleUpperCase()}
                         </a>
                     </h2>
