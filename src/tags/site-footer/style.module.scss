@@ -36,6 +36,10 @@
   padding: 0;
 }
 
+.footer ul li {
+  margin-top: var(--spacing-100);
+}
+
 .content {
   display: grid;
   gap: var(--spacing-400);
@@ -76,12 +80,4 @@
 .brandTitle {
   font-size: 1.5rem;
   font-weight: 600;
-}
-
-.end {
-  border-top: 1px solid var(--color-border-subtle);
-  display: flex;
-  flex-direction: row;
-  font-size: var(--font-size-small);
-  justify-content: center;
 }

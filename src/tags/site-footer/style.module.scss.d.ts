@@ -11,13 +11,11 @@ declare const content: string;
 declare const column: string;
 declare const brand: string;
 declare const brandTitle: string;
-declare const end: string;
 
 export {
 	footer,
 	content,
 	column,
 	brand,
-	brandTitle,
-	end
+	brandTitle
 };
