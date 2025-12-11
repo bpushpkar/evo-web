@@ -19,7 +19,7 @@
   margin-top: 0;
 }
 
-.page {
+.pagination {
   border-top: 1px dashed var(--color-neutral-300);
   display: flex;
   justify-content: space-between;
@@ -27,11 +27,11 @@
   padding-block: var(--spacing-200);
 }
 
-.page > a:last-child {
+.pagination > a:last-child {
   text-align: right;
 }
 
-.page > a {
+.pagination > a {
   align-items: center;
   color: var(--color-foreground-secondary);
   display: inline-flex;
@@ -40,10 +40,10 @@
   text-decoration: none;
 }
 
-.page > a:visited {
+.pagination > a:visited {
   color: var(--color-foreground-secondary);
 }
-.page > a:hover {
+.pagination > a:hover {
   color: var(--color-foreground-primary);
   text-decoration: underline;
 }

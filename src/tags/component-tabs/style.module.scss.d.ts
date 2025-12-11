@@ -9,11 +9,11 @@
 declare const badge: string;
 declare const component: string;
 declare const tabs: string;
-declare const page: string;
+declare const pagination: string;
 
 export {
 	badge,
 	component,
 	tabs,
-	page
+	pagination
 };

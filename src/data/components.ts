@@ -107,10 +107,6 @@ export function getMetadataFromUrl(url: string) {
   const prevKey = componentKeys[currentIndex - 1];
   const nextKey = componentKeys[currentIndex + 1];
 
-  if (url.indexOf(urls.components) === -1) {
-    componentData = {} as any
-  }
-
   return {
     ...componentData,
     prev: components[prevKey],
