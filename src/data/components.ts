@@ -2,7 +2,12 @@ import componentMetadata, {
   type ComponentMetadata,
   type DsComponent,
 } from "./component-metadata";
-import { basePath, getFileNameWithoutExtension, getProperName } from "./common";
+import {
+  basePath,
+  getFileNameWithoutExtension,
+  getProperName,
+  urls,
+} from "./common";
 export const componentTemplate = import.meta.glob(
   "../routes/_index/components/*/+page.marko",
   { eager: true },
@@ -26,16 +31,16 @@ export interface ComponentMap {
     default?: any;
     pageImg?: string;
     a11yPage: boolean;
-    cssPage: boolean;
+    cssPage?: boolean;
     metadata?: ComponentMetadata;
     dsComponent?: DsComponent;
     componentUrls: {
       overview: string;
       accessibility: string;
       css: string;
-      marko: string;
-      react: string;
-      dsUrl: string;
+      marko?: string;
+      react?: string;
+      dsUrl?: string;
     };
   };
 }
@@ -102,6 +107,10 @@ export function getMetadataFromUrl(url: string) {
   const prevKey = componentKeys[currentIndex - 1];
   const nextKey = componentKeys[currentIndex + 1];
 
+  if (url.indexOf(urls.components) === -1) {
+    componentData = {} as any
+  }
+
   return {
     ...componentData,
     prev: components[prevKey],
@@ -140,11 +149,11 @@ function getComponentUrls(
   metadata?: ComponentMetadata,
   dsComponent?: DsComponent,
 ) {
-  const componentUrl = `${basePath}components/${componentName}/`;
+  const componentUrl = `${basePath}components/${componentName}`;
   return {
     overview: `${componentUrl}`,
-    accessibility: `${componentUrl}accessibility/`,
-    css: `${componentUrl}css/`,
+    accessibility: `${componentUrl}/accessibility`,
+    css: `${componentUrl}/css`,
     marko:
       (metadata?.markoStorybookPath ?? false)
         ? `${basePath}ebayui-core/?path=${metadata?.markoStorybookPath}`

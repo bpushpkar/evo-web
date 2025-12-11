@@ -305,6 +305,9 @@ declare module "@marko/run" {
 			"/guides/animation": { verb: "get"; meta: typeof import("../src/routes/_index/guides/animation+meta.json"); };
 			"/guides/page-grid": { verb: "get"; meta: typeof import("../src/routes/_index/guides/page-grid+meta.json"); };
 			"/guides/skeleton": { verb: "get"; meta: typeof import("../src/routes/_index/guides/skeleton+meta.json"); };
+			"/ebayui-core-react/$$": { verb: "get"; };
+			"/ebayui-core/$$": { verb: "get"; };
+			"/skin-storybook/$$": { verb: "get"; };
 			"/guide-examples/page-grid-blog-stretchy-nested": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-nested/+meta.json"); };
 			"/guide-examples/page-grid-blog-stretchy-subgrid": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-blog-stretchy-subgrid/+meta.json"); };
 			"/guide-examples/page-grid-pricing": { verb: "get"; meta: typeof import("../src/routes/guide-examples/page-grid-pricing/+meta.json"); };
@@ -323,6 +326,39 @@ declare module "@marko/run" {
 			"/guide-examples/skeleton-examples/out-of-order/example-4": { verb: "get"; meta: typeof import("../src/routes/guide-examples/skeleton-examples/out-of-order/example-4/+meta.json"); };
 		}
 	}> {}
+}
+
+declare module "../src/routes/ebayui-core-react.$$+handler" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/ebayui-core-react/$$"];
+    export type Context = Run.MultiRouteContext<Route>;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/ebayui-core.$$+handler" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/ebayui-core/$$"];
+    export type Context = Run.MultiRouteContext<Route>;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
+}
+
+declare module "../src/routes/skin-storybook.$$+handler" {
+  namespace MarkoRun {
+    export { NotHandled, NotMatched, GetPaths, PostPaths, GetablePath, GetableHref, PostablePath, PostableHref, Platform };
+    export type Route = Run.Routes["/skin-storybook/$$"];
+    export type Context = Run.MultiRouteContext<Route>;
+    export type Handler = Run.HandlerLike<Route>;
+    /** @deprecated use `((context, next) => { ... }) satisfies MarkoRun.Handler` instead */
+    export const route: Run.HandlerTypeFn<Route>;
+  }
 }
 
 declare module "../src/routes/_index/+page.marko" {

@@ -36,6 +36,7 @@ export function getDirectory(filePath: string) {
 
 export const urls = {
   root: basePath,
+  sitemap: `${basePath}sitemap`,
   components: `${basePath}components`,
   accessibility: `${basePath}accessibility`,
   guides: `${basePath}guides`,
@@ -44,4 +45,5 @@ export const urls = {
   reactComponents: `${basePath}evo-react-components`,
   markoStorybook: `${basePath}ebayui-core`,
   reactStorybook: `${basePath}ebayui-core-react/main`,
+  guideExamples: `${basePath}guide-examples`,
 };

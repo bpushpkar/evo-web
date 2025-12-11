@@ -1,4 +1,4 @@
-import { getProperName } from "../../data";
+import { getProperName, basePath } from "../../data";
 import {breadcrumbs} from "./style.module.scss";
 <const/url=$global.url.pathname.split("/")>
 
@@ -13,10 +13,13 @@ import {breadcrumbs} from "./style.module.scss";
     <ul>
       <for|breadcrumb, index| of=url>
         <li>
+          <log=breadcrumb>
+          <log=index>
+
           <if=index !== url.length - 1>
             <const/href=(url.slice(1, index + 1).join("/"))>
             <const/name=(!!href ? breadcrumb : "Evo Web")>
-            <a href=(!!href ? href : "./")>
+            <a href=(!!href ? `${basePath}${href}` : basePath )>
               ${getProperName(name)}
             </a>
             <svg class="icon icon--12" height="8" width="8" aria-hidden="true">

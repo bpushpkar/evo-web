@@ -1,17 +1,18 @@
+import {urls} from "../../../data";
 <main class="skeleton-usage-guide">
   <h1>Skeleton Usage Guide</h1>
 
   <p>
     This page details
-    <a href="guides/skeleton/#techniques">
+    <a href="#techniques">
       implementation techniques
     </a>
     and
-    <a href="guides/skeleton/#scenarios">
+    <a href="#scenarios">
       common loading scenarios
     </a>
     for eBay Skin's
-    <a href="components/skeleton">
+    <a href=`${urls.components}/skeleton`>
       skeleton
     </a>
     module.
@@ -167,7 +168,7 @@
   <p>
     Of course this is not the whole story! After the page has been loaded, users
     may interact with components that trigger
-    <a href="guides/skeleton#scenario-5">
+    <a href="#scenario-5">
       partial page updates
     </a>
     , in which case skeleton placeholders may also be utilized.
@@ -190,7 +191,7 @@
     the client waits for the entire HTML payload from the server.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/buffered/example-1">
+    <a href=`${urls.guideExamples}/skeleton-examples/buffered/example-1`>
       View Example
     </a>
   </p>
@@ -215,7 +216,7 @@
     Fully client-side rendered JavaScript applications (i.e. SPAs) such as this
     are currently out of scope for this documentation. We may add updates in the
     future. In general though, many of the concepts of
-    <a href="guides/skeleton/#scenario-4">
+    <a href="#scenario-4">
       out-of-order streaming
     </a>
     will apply.
@@ -242,7 +243,7 @@
     technique is highly efficient for this scenario and basic skeleton
     orchestration. Any kind of complex skeleton orchestration would be better
     left to
-    <a href="guides/skeleton/#scenario-4">
+    <a href="#scenario-4">
       out-of-order streaming
     </a>
     . Remember also, that our Skin skeleton classes cannot be leveraged
@@ -260,7 +261,7 @@
     might be streamed in after the main navigation and featured articles.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-1a">
+    <a href=`${urls.guideExamples}/skeleton-examples/in-order/example-1a`>
       View Example
     </a>
   </p>
@@ -279,7 +280,7 @@
     rule.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-1b">
+    <a href=`${urls.guideExamples}/skeleton-examples/in-order/example-1b`>
       View Example
     </a>
   </p>
@@ -295,7 +296,7 @@
     that will be quickly flushed from the server.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-2a">
+    <a href=`${urls.guideExamples}/skeleton-examples/in-order/example-2a`>
       View Example
     </a>
   </p>
@@ -317,7 +318,7 @@
     representing a two column layout on the :empty main column.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/in-order/example-2b">
+    <a href=`${urls.guideExamples}/skeleton-examples/in-order/example-2b`>
       View Example
     </a>
   </p>
@@ -367,7 +368,7 @@
     of order.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-1">
+    <a href=`${urls.guideExamples}/skeleton-examples/out-of-order/example-1`>
       View Example
     </a>
   </p>
@@ -394,7 +395,7 @@
     streaming by reserving the physical space for that content.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-2">
+    <a href=`${urls.guideExamples}/skeleton-examples/out-of-order/example-2`>
       View Example
     </a>
   </p>
@@ -420,17 +421,17 @@
     Let's see what happens when we create skeletons for all main page sections.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-3">
+    <a href=`${urls.guideExamples}/skeleton-examples/out-of-order/example-3`>
       View Example
     </a>
   </p>
   <p>
     Compare this with our
-    <a href="guide-examples/skeleton-examples/out-of-order/example-2">
+    <a href=`${urls.guideExamples}/skeleton-examples/out-of-order/example-2`>
       previous example
     </a>
     or
-    <a href="guide-examples/skeleton-examples/in-order/example-2b">
+    <a href=`${urls.guideExamples}/skeleton-examples/in-order/example-2b`>
       In-Order streaming
     </a>
     . The wait time for the main content is the same, but without any
@@ -453,7 +454,7 @@
     in a way that only ever appends the content.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/out-of-order/example-4">
+    <a href=`${urls.guideExamples}/skeleton-examples/out-of-order/example-4`>
       View Example
     </a>
   </p>
@@ -498,7 +499,7 @@
     reserving the same amount of physical space as the content that is fetched.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/csr/example-1">
+    <a href=`${urls.guideExamples}/skeleton-examples/csr/example-1`>
       View Example
     </a>
   </p>
@@ -515,7 +516,7 @@
     skeleton.
   </p>
   <p>
-    <a href="guide-examples/skeleton-examples/csr/example-2">
+    <a href=`${urls.guideExamples}/skeleton-examples/csr/example-2`>
       View Example
     </a>
   </p>
@@ -536,11 +537,11 @@
   <p>
     Just as with loading more content, refreshing a section of content can fall
     afoul of layout shift if the content size is
-    <a href="guide-examples/skeleton-examples/csr/example-3">
+    <a href=`${urls.guideExamples}/skeleton-examples/csr/example-3`>
       unpredictable
     </a>
     . Again the situation can be avoided with
-    <a href="guide-examples/skeleton-examples/csr/example-4">
+    <a href=`${urls.guideExamples}/skeleton-examples/csr/example-4`>
       predictable
     </a>
     content size.
