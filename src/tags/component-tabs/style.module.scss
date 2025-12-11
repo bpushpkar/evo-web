@@ -1,0 +1,49 @@
+@use "@ebay/skin/dist/badge/badge";
+.badge {
+  background-color: var(--color-background-inverse);
+  margin-inline-end: 3px;
+  padding: 7px 6px;
+  position: relative;
+  top: -2px;
+}
+
+.component {
+  margin-block: var(--spacing-400);
+
+  h1 {
+    margin-block: 24px 16px;
+  }
+}
+
+.tabs {
+  margin-top: 0;
+}
+
+.page {
+  border-top: 1px dashed var(--color-neutral-300);
+  display: flex;
+  justify-content: space-between;
+  margin-block: var(--spacing-200);
+  padding-block: var(--spacing-200);
+}
+
+.page > a:last-child {
+  text-align: right;
+}
+
+.page > a {
+  align-items: center;
+  color: var(--color-foreground-secondary);
+  display: inline-flex;
+  font-size: var(--font-size-small);
+  gap: var(--spacing-50);
+  text-decoration: none;
+}
+
+.page > a:visited {
+  color: var(--color-foreground-secondary);
+}
+.page > a:hover {
+  color: var(--color-foreground-primary);
+  text-decoration: underline;
+}

@@ -1,0 +1,35 @@
+import { getProperName } from "../../data";
+import {breadcrumbs} from "./style.module.scss";
+<const/url=$global.url.pathname.split("/")>
+
+<div class=breadcrumbs>
+  <nav
+    aria-labelledby="site-breadcrumbs-heading"
+    class="breadcrumbs"
+    role="navigation">
+    <p id="site-breadcrumbs-heading" class="clipped">
+      You are here
+    </p>
+    <ul>
+      <for|breadcrumb, index| of=url>
+        <li>
+          <if=index !== url.length - 1>
+            <const/href=(url.slice(1, index + 1).join("/"))>
+            <const/name=(!!href ? breadcrumb : "Evo Web")>
+            <a href=(!!href ? href : "./")>
+              ${getProperName(name)}
+            </a>
+            <svg class="icon icon--12" height="8" width="8" aria-hidden="true">
+              <use href="#icon-chevron-right-12"/>
+            </svg>
+          </if>
+          <else>
+            <a aria-current="page">
+              ${getProperName(breadcrumb)}
+            </a>
+          </else>
+        </li>
+      </for>
+    </ul>
+  </nav>
+</div>

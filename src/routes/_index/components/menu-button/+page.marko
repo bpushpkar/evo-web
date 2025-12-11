@@ -1,0 +1,67 @@
+<div id="menu-button-overview">
+  <component-banner-img/>
+
+  <p>
+    The menu button pattern is a JavaScript widget. It is a button that expands
+    to reveal a <a href="components/menu">menu</a> in a popover.
+  </p>
+  <p>
+    A menu is
+    appropriate when requiring a partial page re-render <em>without</em> using a form
+    or full page reload. For example: dynamic filtering and sorting of search results.
+  </p>
+  <p>
+    A
+    menu is <strong>not</strong> appropriate for a full page reload. For that, please use links
+    instead (see the <a href="accssibility/patterns/fake-menu">fake menu</a> pattern. The
+    distinction between menu items and links is important. A menu item is a
+    command that executes JavaScript, whereas a link is a command that navigates
+    to a url. If your menu must contain a mix of JavaScript behaviour and link
+    behaviour, please use a regular list of buttons and links. Do no mix menu
+    items with links.
+  </p>
+  <p>
+    <strong>TIP</strong>: Do not call a menu button a "dropdown"! The term
+    "dropdown" is ambiguous and could be confused with a listbox, combobox
+    select or any other kind of overlay that "drops down". If you must, call it
+    a dropdown menu.
+  </p>
+
+  <p>
+    A menu button follows the principal of
+    <a href="https://en.wikipedia.org/wiki/Progressive_disclosure">
+      progressive disclosure
+    </a>
+    , it keeps secondary commands hidden from view until needed.
+  </p>
+
+  <h2>Terminology</h2>
+  <p>We use the following terminology when discussing this pattern.</p>
+  <ul>
+    <li>
+      <strong>widget</strong>
+      : the pattern as a whole, comprising the parts listed below
+    </li>
+    <li>
+      <strong>button</strong>
+      : expands or collapses the overlay
+    </li>
+    <li>
+      <strong>collapsed/expanded</strong>
+      : state of overlay
+    </li>
+    <li>
+      <strong>overlay</strong>
+      : contains menu
+    </li>
+    <li>
+      <strong>menu</strong>
+      : a menu that contains commands
+    </li>
+    <li>
+      <strong>command</strong>
+      : individual menu item, menu item checkbox or menu item radio
+      commands
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,4 @@
+{
+  "pageTitle": "Toast Dialog Component",
+  "pageDescription": "The Toast Dialog component displays temporary notification messages with auto-dismiss functionality. Built with accessibility considerations and configurable timing, it provides non-blocking user feedback. Available in Evo Web's CSS, React, and Marko implementations."
+}

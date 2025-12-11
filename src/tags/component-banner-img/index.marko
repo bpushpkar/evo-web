@@ -1,0 +1,15 @@
+import { getMetadataFromUrl } from "../../data";
+import { subtitle, image } from "./style.module.scss";
+
+<const/{ pageImg, metadata, properName }=getMetadataFromUrl(
+    $global.url.pathname,
+)>
+
+<h1>${properName} Component</h1>
+<if=metadata?.description>
+    <p class=subtitle>
+        ${metadata.description}
+    </p>
+</if>
+
+<img class=image src=pageImg aria-hidden="true" alt="">

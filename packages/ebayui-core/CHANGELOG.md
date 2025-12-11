@@ -155,7 +155,7 @@
 - [#210](https://github.com/eBay/evo-web/pull/210) [`66463ee`](https://github.com/eBay/evo-web/commit/66463ee6cc8b07c6b65f616108daa4bafb663687) Thanks [@agliga](https://github.com/agliga)! - feat(chip): added selection and filter chip
 
 - Updated dependencies [[`05d3c40`](https://github.com/eBay/evo-web/commit/05d3c4023776de1e2ac1f4c46b8e19dec2e3ddf6)]:
-  - @ebay/skin@19.11.0
+    - @ebay/skin@19.11.0
 
 ## 15.8.1
 

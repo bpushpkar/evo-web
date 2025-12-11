@@ -1,0 +1,14 @@
+import tokens from "./token-doc.json";
+import * as styles from './style.module.scss';
+export interface Input {
+  type?: "core" | "expressive" | "semantic" | "live";
+}
+<const/values=tokens[input.type || "core"]>
+<ul class=styles.list>
+  <for|token| of=values>
+    <li>
+      <div class=styles.item style=`background:${token.value};`/>
+      ${token.prop}
+    </li>
+  </for>
+</ul>

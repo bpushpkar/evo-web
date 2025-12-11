@@ -1,0 +1,120 @@
+/* Base styles and CSS reset */
+*,
+*::before,
+*::after {
+  border-color: #e5e7eb;
+  border-style: solid;
+  border-width: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-background-primary);
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100vh;
+}
+
+body > svg {
+  height: 0;
+  position: absolute;
+  width: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Typography reset */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  margin-block: var(--spacing-400) var(--spacing-400);
+}
+
+/* Sticky footer layout */
+body > main,
+.content {
+  flex: 1;
+}
+
+body > main:last-child {
+  margin-bottom: 0;
+}
+
+main {
+  margin-bottom: var(--spacing-400);
+}
+
+.icon-header {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.site-nav {
+  display: none;
+}
+
+@media screen and (min-width: 512px) {
+  .site-nav {
+    margin-bottom: var(--spacing-800);
+  }
+
+  .site-nav h2 {
+    font-size: var(--font-size-18);
+    margin-bottom: var(--spacing-200);
+    margin-top: var(--spacing-200);
+  }
+
+  .site-nav h2:first-of-type {
+    margin-top: var(--spacing-400);
+  }
+
+  .site-nav ul {
+    line-height: 1.5em;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav ul:last-child {
+    padding-bottom: var(--spacing-400);
+  }
+
+  .site-nav a {
+    text-decoration: none;
+  }
+
+  .site-nav a:visited {
+    color: var(--color-foreground-primary);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .site-nav {
+    display: block;
+  }
+}
+
+.secondary-nav li {
+  line-height: 1.25em;
+  margin-bottom: 0.75em;
+}
+
+.demo {
+    border: 1px dashed var(--color-neutral-300);
+}
+
+.demo__inner {
+  margin: var(--spacing-100);
+
+}
