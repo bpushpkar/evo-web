@@ -68,18 +68,6 @@ import { components } from "../../../data";
   }
 </style>
 
-<svg style="display: none;">
-  <symbol id="image-placeholder" viewBox="0 0 24 24">
-    <rect width="24" height="24" fill="#e0e0e0"/>
-    <text x="12" y="12" text-anchor="middle" fill="#9e9e9e" font-size="12">
-      Image
-    </text>
-  </symbol>
-  <symbol id="information-filled-16" viewBox="0 0 16 16">
-    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 11a1 1 0 1 1-2 0V8a1 1 0 0 1 2 0v3ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
-  </symbol>
-</svg>
-
 <div class="component-listings">
   <ul class="components-list">
     <for|key, component| in=components>
@@ -97,7 +85,7 @@ import { components } from "../../../data";
                   aria-label="image not found"
                   class="image-placeholder .card__hero-image"
                   role="img">
-                  <use href="#image-placeholder"/>
+                  <use href="#icons-image-placeholder"/>
                 </svg>
               </object>
             </div>
@@ -109,17 +97,17 @@ import { components } from "../../../data";
                 ${component?.metadata.description}
               </div>
               <div class="card__footer">
-                <if=dsComponent?.version>
+                <if=dsComponent?.version && component?.cssPage>
                   <span class="component-version">
                     CSS v${dsComponent?.version}
                   </span>
                 </if>
-                <if=dsComponent?.markoVersion>
+                <if=dsComponent?.markoVersion && component?.componentUrls.marko>
                   <span class="component-version">
                     Marko v${dsComponent?.markoVersion}
                   </span>
                 </if>
-                <if=dsComponent?.reactVersion>
+                <if=dsComponent?.reactVersion && component?.componentUrls.react>
                   <span class="component-version">
                     React v${dsComponent?.reactVersion}
                   </span>
