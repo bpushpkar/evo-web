@@ -49,3 +49,28 @@ export const a11yDocs = Object.keys(a11yDocsTemplates).reduce<A11yDocsMap>(
   },
   {},
 );
+
+const customOrder = ["patterns", "anti-patterns", "techniques", "testing"];
+export const a11yList = Object.keys(a11yDocs);
+
+a11yList.sort((a, b) => {
+  // 1. Determine the index in the custom order list
+  const indexA = customOrder.indexOf(a);
+  const indexB = customOrder.indexOf(b);
+  if (indexA > -1 && indexB > -1) {
+    return indexA - indexB;
+  }
+  // If only 'a' is in the custom list, it comes first (negative value)
+  if (indexA > -1) {
+    return -1;
+  }
+  // If only 'b' is in the custom list, it comes first (positive value in reverse comparison)
+  if (indexB > -1) {
+    return 1;
+  }
+
+  // 3. Secondary Sort: Alphabetical for the rest
+  // If neither or both are in the custom list, sort them alphabetically
+  // localeCompare provides a robust, native way to sort strings alphabetically
+  return a.localeCompare(b);
+});
