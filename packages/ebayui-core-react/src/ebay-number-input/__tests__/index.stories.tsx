@@ -22,3 +22,7 @@ export const WithDelete: StoryFn<typeof EbayNumberInput> = () => (
 export const WithLabel: StoryFn<typeof EbayNumberInput> = () => (
     <EbayNumberInput min={1} max={10} value={1} label={"Enter a number"} />
 );
+
+export const WithAriaLabel: StoryFn<typeof EbayNumberInput> = () => (
+    <EbayNumberInput min={1} max={10} value={1} aria-label="Qty" />
+);

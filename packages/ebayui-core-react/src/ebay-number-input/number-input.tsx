@@ -120,6 +120,7 @@ const EbayNumberInput: FC<EbayNumberInputProps> = (props) => {
             )}
         >
             <EbayTextbox
+                {...rest}
                 max={max}
                 min={min}
                 onBlur={handleBlur}

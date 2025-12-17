@@ -129,6 +129,14 @@ describe("given a number input textbox with delete", () => {
     });
 });
 
+describe("given a number input textbox with aria-label", () => {
+    it("should render aria-label attribute on input", () => {
+        const { container } = render(<EbayNumberInput aria-label="Qty" value={1} />);
+        const input = container.querySelector('input[type="number"]');
+        expect(input).toHaveAttribute("aria-label", "Qty");
+    });
+});
+
 describe("given a number input textbox with constraints", () => {
     let onChange: jest.Mock;
     let onIncrement: jest.Mock;

@@ -1,4 +1,5 @@
-import type { EbayTextboxProps as TextboxInput } from "../ebay-textbox";
+import type { ComponentProps } from "react";
+import { EbayTextbox } from "../ebay-textbox";
 
 import {
     EbayChangeEventHandler,
@@ -16,7 +17,7 @@ export type NumberInputFocusHandler = EbayFocusEventHandler<HTMLInputElement, Nu
 export type NumberInputKeyDownHandler = EbayKeyboardEventHandler<HTMLInputElement, NumberInputEventProps>;
 
 export type EbayNumberInputProps = Omit<
-    TextboxInput,
+    ComponentProps<typeof EbayTextbox>,
     "onChange" | "onInputChange" | "onFocus" | "onBlur" | "onKeyDown" | "onKeyPress" | "onKeyUp" | "forwardedRef"
 > & {
     label?: string;
